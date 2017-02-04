@@ -10,13 +10,8 @@ module.exports = {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      // loader: 'babel-loader'
       loaders: ['react-hot-loader','babel-loader']
-    }],
-    // preLoaders: [{
-    //   test: /\.js?$/,
-    //   loader: 'react-hot-loader'
-    // }]
+    }]
   },
   resolve: {
     extensions: ['.js', '.jsx']

@@ -18,11 +18,11 @@ export const Results = React.createClass({
   render: function() {
     return this.props.winner ?
       <Winner ref="winner" winner={this.props.winner} /> :
-      <div className="results">
+      <div className="results section">
         <div className="tally">
           {this.getPair().map(entry =>
             <div key={entry} className="entry">
-              <h1>{entry}</h1>
+              <h5>{entry}</h5>
               <div className="voteCount">
                 {this.getVotes(entry)}
               </div>

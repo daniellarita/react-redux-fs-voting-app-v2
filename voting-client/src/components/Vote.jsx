@@ -14,12 +14,13 @@ export default React.createClass({
     return this.props.hasVoted === entry;
   },
   render: function() {
-    return <div className="voting">
+    return <div className="voting section">
       {this.getPair().map(entry =>
         <button key={entry}
                 disabled={this.isDisabled()}
-                onClick={() => this.props.vote(entry)}>
-          <h1>{entry}</h1>
+                onClick={() => this.props.vote(entry)}
+                >
+          <h5>{entry}</h5>
           {this.hasVotedFor(entry) ?
             <div className="label">Voted</div> :
             null}

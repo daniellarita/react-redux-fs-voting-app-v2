@@ -4,7 +4,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 export default React.createClass({
   mixins: [PureRenderMixin],
   render: function() {
-    return <div className="winner">
+    return <div className="winner section">
       Winner is {this.props.winner}!
     </div>;
   }

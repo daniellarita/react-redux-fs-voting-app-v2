@@ -9,6 +9,7 @@ import {setState} from './action_creators';
 // connects client side actions to server side redux:
 import remoteActionMiddleware from './remote_action_middleware';
 import App from './components/App';
+//require('./css/style.css');
 
 const socket = io(`${location.protocol}//${location.hostname}:8090`);
 socket.on('state', state =>
