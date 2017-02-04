@@ -9,8 +9,6 @@ import {setState} from './action_creators';
 // connects client side actions to server side redux:
 import remoteActionMiddleware from './remote_action_middleware';
 import App from './components/App';
-import {VotingContainer} from './components/Voting';
-import {ResultsContainer} from './components/Results';
 
 const socket = io(`${location.protocol}//${location.hostname}:8090`);
 socket.on('state', state =>
@@ -24,15 +22,11 @@ const store = createStoreWithMiddleware(reducer, window.__REDUX_DEVTOOLS_EXTENSI
 // use this instead for redux dev tools
 // const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-
-const routes = <Route component={App}>
-  <Route path="/results" component={ResultsContainer} />
-  <Route path="/" component={VotingContainer} />
-</Route>;
-
 ReactDOM.render(
   <Provider store={store}>
-    <Router history={hashHistory}>{routes}</Router>
+    <Router history={hashHistory}>
+      <Route path='/' component={App} />
+    </Router>
   </Provider>,
   document.getElementById('app')
 );
